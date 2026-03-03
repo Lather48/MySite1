@@ -1,0 +1,79 @@
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --accent: #ff003c;
+  /* Neon red/pink accent */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-ndot: "NDot", "Share Tech Mono", "DotGothic16", monospace;
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'NDot';
+  src: local('Space Mono'), local('Courier New');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none;
+  /* For custom cursor */
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Utility Classes */
+.font-ndot {
+  font-family: var(--font-ndot);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+
+.text-neon {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.5), 0 0 20px rgba(255, 0, 60, 0.3);
+}
+
+/* Force override browser extensions (Autofill/LastPass hijacking) */
+.contact-input {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 1.8rem !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+  display: block !important;
+}
